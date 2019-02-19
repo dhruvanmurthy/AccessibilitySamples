@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AbilitySummit2017_WinJS</title>
+    <link href="css/default.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Any data presented visually in a table must also be represented
+         programmatically though UIA as being contained in table. -->
+
+    <!-- Give the table a useful accessible name. If a visual label was available, 
+         that could be defined as being the label for the table, but there is no such
+         visual label in this example. So use aria-label to set the accessible name. -->
+
+    <table aria-label="My favourite dogs">
+        <tr>
+
+            <!-- FIX SORT ACCESSIBILITY:
+              Expose information about a column being the current sort column, through the UIA FullDescription property. 
+              If a visual label was available for the source of the sort order description string, then that would be 
+              referenced as the source of the description, using aria-describedby. There is no such visual label in this 
+              example, so create a hidden label, and reference that using aria-describedby. Note that traditionally a 
+              hidden element could not be referenced in this way, but in recent versions of Edge, a hidden label can be 
+              set as the accessible description for another element. -->
+
+            <label id="SortDescription" hidden>Ascending sort</label>
+
+            <th>
+
+                <!-- FIX SORT ACCESSIBILITY:
+                  Use buttons as the means through which the customer will change the sort order.
+                  Buttons are keyboard accessible by default. (Note: Simply adding a role of
+                  "button" to a div will not make the div keyboard accessible.) Style the buttons
+                  visually if required. -->
+
+                <button class="myButton" id="nameSortButton" onclick="clickSort(this)" aria-describedby="SortDescription">
+                    Dog
+
+                    <!-- By using text as the sort order indicator, it will be displayed
+                     using the appropriate color when a high contrast theme is active. -->
+
+                    <div id="nameSortState" aria-hidden="true">v</div>
+
+                </button>
+            </th>
+            <th>
+                <button class="myButton" id="ageSortButton" onclick="clickSort(this)">
+                    Age
+                    <div id="ageSortState" hidden>v</div>
+                </button>
+            </th>
+            <th>
+                <button class="myButton" id="locationSortButton" onclick="clickSort(this)">
+                    Location
+                    <div id="locationSortState" hidden>v</div>
+                </button>
+            </th>
+        </tr>
+        <tr>
+            <td>Jasmine Spaniel</td>
+            <td>15</td>
+            <td>Kirland</td>
+        </tr>
+        <tr>
+            <td>Molly Spaniel</td>
+            <td>05</td>
+            <td>Euxton</td>
+        </tr>
+    </table>
+
+    <script src="js/main.js"></script>
+    <style>
+        .myButton {
+            background-color: transparent;
+            border-color: transparent;
+        }
+    </style>
+</body>
+</html>

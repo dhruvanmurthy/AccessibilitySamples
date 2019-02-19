@@ -1,0 +1,85 @@
+﻿<Page
+    x:Class="AbilitySummit2017_BugWorkshop.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AbilitySummit2017_BugWorkshop"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="60">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.ColumnSpan="3" x:Uid="FormInstructions" Margin="20"/>
+
+        <!-- ACCESSIBILTY BUG FIXES:
+          1. Set AutomationProperties.LabeledBy on all the TextBoxes, to have their 
+             accessible name set from the nearby visual TextBlocks.
+          2. Set AccessKeys on all interactable controls to provide an efficient 
+             way to interact with those controls. -->        
+        
+        <TextBlock Grid.Row="1" x:Name="NameFieldLabel" x:Uid="NameFieldLabel" Margin="8" />
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="NameField" Width="300" Margin="8" 
+                 AutomationProperties.LabeledBy="{Binding ElementName=NameFieldLabel}" 
+                 AccessKey="N" />
+
+        <TextBlock Grid.Row="2" x:Name="PhoneFieldLabel" x:Uid="PhoneFieldLabel" Margin="8"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="PhoneField" Margin="8" 
+                 AutomationProperties.LabeledBy="{Binding ElementName=PhoneFieldLabel}" 
+                 AccessKey="P" />
+        <TextBlock Grid.Row="3" Grid.Column="1" x:Name="PhoneFieldDescription" x:Uid="PhoneFieldDescription" Visibility="Collapsed" />
+
+        <TextBlock Grid.Row="4" x:Name="EmailFieldLabel" x:Uid="EmailFieldLabel" Margin="8" />
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="EmailField" Margin="8" 
+                 AutomationProperties.LabeledBy="{Binding ElementName=EmailFieldLabel}" 
+                 AccessKey="E" />
+
+        <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
+            <Button x:Uid="ClearButton" Click="ClearButton_Click" Margin="20" Width="80"
+                    AccessKey="C" />
+            <Button x:Uid="SubmitButton" Click="SubmitButton_Click" Margin="20" Width="80"
+                    AccessKey="S" />
+        </StackPanel>
+
+        <!-- Accessibility: Make sure the table has an accessible name. (And don't include "list" in its name.) -->
+        
+        <ListView Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" 
+                  x:Name="MyAnimalList" x:Uid="MyAnimalList"
+                  KeyUp="MyAnimalList_KeyUp"
+                  Height="300" Width="400" HorizontalAlignment="Left"
+                  BorderThickness="1" BorderBrush="Black">
+            
+            <!-- Accessibility: Add a context menu as a way for the items to be programmatically deleted. -->
+            <ListView.Resources>
+                <MenuFlyout x:Name="MyMenuFlyout">
+                    <MenuFlyout.Items>
+                        <MenuFlyoutItem Text="Delete" Click="DeleteItemButton_Click" />
+                    </MenuFlyout.Items>
+                </MenuFlyout>
+            </ListView.Resources>
+            
+            <ListViewItem RightTapped="ListViewItem_RightTapped">Spaniel</ListViewItem>
+            <ListViewItem RightTapped="ListViewItem_RightTapped">Guinea Pig</ListViewItem>
+            <ListViewItem RightTapped="ListViewItem_RightTapped">Retriever</ListViewItem>
+        </ListView>
+
+        <TextBlock Grid.Row="7" Grid.Column="1" 
+                   x:Name="EmptyListLabel" x:Uid="EmptyListLabel"
+                   Visibility="Collapsed"
+                   Margin="10" VerticalAlignment="Center" />
+    </Grid>
+</Page>
