@@ -27,5 +27,10 @@ namespace AbilitySummit2017_WinForms
             var processForm = new ProcessForm();
             processForm.ShowDialog(this);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

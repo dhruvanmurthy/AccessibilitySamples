@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
-    "UAP,Version=v10.0": {
+    "UAP,Version=v10.0.15063": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1878,7 +1878,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-arm": {
+    "UAP,Version=v10.0.15063/win10-arm": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3621,7 +3621,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-arm-aot": {
+    "UAP,Version=v10.0.15063/win10-arm-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5321,7 +5321,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-x64": {
+    "UAP,Version=v10.0.15063/win10-x64": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7073,7 +7073,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-x64-aot": {
+    "UAP,Version=v10.0.15063/win10-x64-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -8773,7 +8773,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-x86": {
+    "UAP,Version=v10.0.15063/win10-x86": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10525,7 +10525,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-x86-aot": {
+    "UAP,Version=v10.0.15063/win10-x86-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -15607,24 +15607,37 @@
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0"
     ],
-    "UAP,Version=v10.0": []
+    "UAP,Version=v10.0.15063": []
   },
   "packageFolders": {
-    "C:\\Users\\guybark\\.nuget\\packages\\": {}
+    "C:\\Users\\v-dhnara\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\guybark\\Documents\\Visual Studio 2017\\Projects\\AbilitySummit2017_BugWorkshop\\AbilitySummit2017_UWP_XAML\\AbilitySummit2017_UWP_XAML.csproj",
+      "projectUniqueName": "E:\\GitRepos\\AbilitySummit2017_BugWorkshop\\AbilitySummit2017_UWP_XAML\\AbilitySummit2017_UWP_XAML.csproj",
       "projectName": "AbilitySummit2017_UWP_XAML",
-      "projectPath": "C:\\Users\\guybark\\Documents\\Visual Studio 2017\\Projects\\AbilitySummit2017_BugWorkshop\\AbilitySummit2017_UWP_XAML\\AbilitySummit2017_UWP_XAML.csproj",
-      "projectJsonPath": "C:\\Users\\guybark\\Documents\\Visual Studio 2017\\Projects\\AbilitySummit2017_BugWorkshop\\AbilitySummit2017_UWP_XAML\\project.json",
-      "projectStyle": "ProjectJson"
+      "projectPath": "E:\\GitRepos\\AbilitySummit2017_BugWorkshop\\AbilitySummit2017_UWP_XAML\\AbilitySummit2017_UWP_XAML.csproj",
+      "projectJsonPath": "E:\\GitRepos\\AbilitySummit2017_BugWorkshop\\AbilitySummit2017_UWP_XAML\\project.json",
+      "packagesPath": "C:\\Users\\v-dhnara\\.nuget\\packages\\",
+      "outputPath": "E:\\GitRepos\\AbilitySummit2017_BugWorkshop\\AbilitySummit2017_UWP_XAML\\obj\\",
+      "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\v-dhnara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "E:\\CorextCache": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://msdata.pkgs.visualstudio.com/DefaultCollection/_packaging/SQLDS_Shared/nuget/v3/index.json": {},
+        "https://msdata.pkgs.visualstudio.com/DefaultCollection/_packaging/SQL_Toolset/nuget/v3/index.json": {}
+      }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "[5.1.0, )"
     },
     "frameworks": {
-      "uap10.0": {}
+      "uap10.0.15063": {}
     },
     "runtimes": {
       "win10-arm": {

@@ -24,5 +24,6 @@
             <TextBlock x:Name="StatusButton"  VerticalAlignment="Bottom">Status: Not processing</TextBlock>
             <Button Click="CloseButton_Click" Margin="10" Padding="8" Grid.Column="2">Close</Button>
         </Grid>
+        <Label Name="MyLabel" MouseDoubleClick="doubleclick" Content="Label" HorizontalAlignment="Left" Margin="199,32.8,0,0" Grid.Row="2" VerticalAlignment="Top"/>
     </Grid>
 </Window>
