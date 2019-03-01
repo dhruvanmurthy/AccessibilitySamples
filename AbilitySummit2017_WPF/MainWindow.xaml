@@ -14,16 +14,18 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock x:Name="InstructionsLabel">Process your data using innovative data processing techniques.</TextBlock>
-        <Button x:Name="ProcessButton" Click="ProcessButton_Click" HorizontalAlignment="Left" Margin="10" Grid.Row="1" Width="80">Process</Button>
+        <Button x:Name="LiveRegionButton" Click="LiveRegionButton_Click" HorizontalAlignment="Left" Margin="10" Grid.Row="1" Width="120">Test Live Region</Button>
+        <Button x:Name="ProcessButton" Click="ProcessButton_Click" HorizontalAlignment="Left" Margin="140,10,0,10" Grid.Row="1" Width="80">Process</Button>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock x:Name="StatusButton"  VerticalAlignment="Bottom">Status: Not processing</TextBlock>
+            <TextBlock x:Name="LiveRegionText" VerticalAlignment="Bottom" Margin="0,0,0,20" AutomationProperties.LiveSetting="Assertive">Loading...</TextBlock>
+            <TextBlock x:Name="StatusButton" VerticalAlignment="Bottom">Status: Not processing</TextBlock>
             <Button Click="CloseButton_Click" Margin="10" Padding="8" Grid.Column="2">Close</Button>
         </Grid>
-        <Label Name="MyLabel" MouseDoubleClick="doubleclick" Content="Label" HorizontalAlignment="Left" Margin="199,32.8,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
